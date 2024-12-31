@@ -1,0 +1,264 @@
+// ==UserScript==
+// @name         DG Clan Mod
+// @namespace    http://tampermonkey.net/
+// @version      1.3
+// @description  Visual Narrow One Modification for DG Clan Members; including new button names, new flag assets, new player assets, new coin assets; Discord: https://discord.gg/ZPd2WbEtXm
+// @author       @LetsSuKiTV
+// @run-at       document-start
+// @match        https://narrow.one/
+// @icon         https://yt3.googleusercontent.com/nNtzqghIh1sHuGduYSXL-1BXB9FRRZAqqvTmJv725RhBZwqVDXhGijvSEu_U44Mwh1YV3YwNSW8=s160-c-k-c0x00ffffff-no-rj
+// @downloadURL  https://raw.githubusercontent.com/TheGirlThatLived/NarrowOne_Customizations/refs/heads/main/Scripts/FanTranslation(Shitongue).js
+// @updateURL    https://raw.githubusercontent.com/TheGirlThatLived/NarrowOne_Customizations/refs/heads/main/Scripts/FanTranslation(Shitongue).js
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    // Function to replace the text
+    function translateButtonText() {
+        const translatedCoinCount = document.querySelectorAll('.coin-count-text');
+        translatedCoinCount.forEach(translatedCoinCount => {
+            translatedCoinCount.setAttribute('data-text-content', 'DG');
+            translatedCoinCount.textContent = 'DG';
+        });
+        const translatedButtons = document.querySelectorAll('.main-menu-button-text, button.dialog-button, div.mainInfoText, h3.dialogTitle, span.coin-count-text.blueNight, h2.dialogTitle, .dialogText, .stat-class-tooltip');
+        translatedButtons.forEach(untranslatedButton => {
+            switch(untranslatedButton.textContent.trim()) {
+                case 'Click to join':
+                    untranslatedButton.textContent = 'DEMIGODS';
+                    break;
+                case 'Press T to chat with your squad':
+                    untranslatedButton.textContent = 'Press T to chat with your squad';
+                    break;
+                    // Main Menu buttons
+                case 'Settings':
+                    untranslatedButton.textContent = 'DG Settings';
+                    break;
+                case 'Shop':
+                    untranslatedButton.textContent = 'DG Shop';
+                    break;
+                case 'Squad':
+                    untranslatedButton.textContent = 'DG Squad';
+                    break;
+                case 'Maps':
+                    untranslatedButton.textContent = 'DG Maps';
+                    break;
+                case 'Full Screen':
+                    untranslatedButton.textContent = 'DG Fullscreen';
+                    break;
+                case 'Exit Full Screen':
+                    untranslatedButton.textContent = 'DG Exit Full Screen';
+                    break;
+                case 'Enable Auto Full Screen?':
+                    untranslatedButton.textContent = 'Enable Auto Full Screen';
+                    break;
+                case 'Do you automatically want to enter full screen when joining a game? (This can be disabled later in settings)':
+                    untranslatedButton.textContent = 'Do you automatically want to enter full screen when joining a game? (This can be disabled later in settings)';
+                    break;
+                case 'Heck Yeah!':
+                    untranslatedButton.textContent = 'Heck Yeah!';
+                    break;
+                case 'No Thanks':
+                    untranslatedButton.textContent = 'No Thanks';
+                    break;
+                case 'Install':
+                    untranslatedButton.textContent = 'Install';
+                    break;
+                case 'Exit Round':
+                    untranslatedButton.textContent = 'Exit Round';
+                    break;
+                case 'Join our Discord':
+                    untranslatedButton.textContent = 'Join our Discord';
+                    break;
+                    // Match dialogs
+                case 'Are you sure?':
+                    untranslatedButton.textContent = 'Are you sure?';
+                    break;
+                case 'You will not earn any coins from this match.':
+                    untranslatedButton.textContent = 'You will not earn any coins from this match.';
+                    break;
+                case 'You are the squad leader so all members will exit this match too. No one will earn any coins from this match.':
+                    untranslatedButton.textContent = 'You are the squad leader so all members will exit this match too. No one will earn any coins from this match.';
+                    break;
+                case 'Exit':
+                    untranslatedButton.textContent = 'Exit';
+                    break;
+                case 'stay in game':
+                    untranslatedButton.textContent = 'stay';
+                    break;
+                case 'Connection closed':
+                    untranslatedButton.textContent = 'Connection closed';
+                    break;
+                case 'You have been kicked for being afk for too long.':
+                    untranslatedButton.textContent = 'You´ve been kicked';
+                    break;
+                case 'ok':
+                    untranslatedButton.textContent = 'ok';
+                    break;
+                case 'Squad not found':
+                    untranslatedButton.textContent = 'Squad not found';
+                    break;
+                case 'You are currently in a game':
+                    untranslatedButton.textContent = 'You are currently in a game';
+                    break;
+                case 'Do you want to leave the current match?':
+                    untranslatedButton.textContent = 'Do you want to leave the current match?';
+                    break;
+                case 'Yes':
+                    untranslatedButton.textContent = 'Yes';
+                    break;
+                case 'No':
+                    untranslatedButton.textContent = 'No';
+                    break;
+                case 'Ad failed to load':
+                    untranslatedButton.textContent = 'Ad failed to load';
+                    break;
+                case 'An error occurred while trying to load the ad.':
+                    untranslatedButton.textContent = 'An error occurred while trying to load the ad.';
+                    break;
+                case 'Confirm your purchase':
+                    untranslatedButton.textContent = 'You are not allowed to buy anything on our clan account!';
+                    break;
+                case 'Cancel':
+                    untranslatedButton.textContent = 'OK';
+                    break;
+                case 'Get Item':
+                    untranslatedButton.textContent = 'Get item';
+                    break;
+                case 'Invite someone':
+                    untranslatedButton.textContent = 'Invite someone';
+                    break;
+                case 'Join existing squad':
+                    untranslatedButton.textContent = 'Join existing squad';
+                    break;
+                case 'Ready':
+                    untranslatedButton.textContent = 'Ready';
+                    break;
+                case 'Start':
+                    untranslatedButton.textContent = 'Start';
+                    break;
+                case 'Still connecting':
+                    untranslatedButton.textContent = 'Still connecting';
+                    break;
+                case 'Connecting seems to take longer than expected. Do you want to keep trying?':
+                    untranslatedButton.textContent = 'Connecting seems to take longer than expected. Do you want to keep trying?';
+                    break;
+                case 'Keep trying':
+                    untranslatedButton.textContent = 'Keep trying';
+                    break;
+                case 'The connection closed abruptly :(':
+                    untranslatedButton.textContent = 'The connection closed abruptly :(';
+                    break;
+                    // Loadouts
+                case 'Are you sure you want to delete this preset?':
+                    untranslatedButton.textContent = 'Are you sure you want to delete this preset?';
+                    break;
+                case 'Presets':
+                    untranslatedButton.textContent = 'Presets';
+                    break;
+                case 'Preset':
+                    untranslatedButton.textContent = 'Preset';
+                    break;
+                case 'Scout':
+                    untranslatedButton.textContent = 'DG Scout';
+                    break;
+                case 'Assault':
+                    untranslatedButton.textContent = 'DG Assault';
+                    break;
+                case 'Sharpshooter':
+                    untranslatedButton.textContent = 'DG Sharpshooter';
+                    break;
+                case 'Runner':
+                    untranslatedButton.textContent = 'DG Runner';
+                    break;
+                case 'Support':
+                    untranslatedButton.textContent = 'DG Support';
+                    break;
+                case 'Defender':
+                    untranslatedButton.textContent = 'DG Defender';
+                    break;
+                case 'Edit':
+                    untranslatedButton.textContent = 'Edit';
+                    break;
+            }
+        });
+    }
+    // Initial replacement on page load
+    translateButtonText();
+    // Observe for dynamic content changes
+    const observer = new MutationObserver(translateButtonText);
+    observer.observe(document.body, { childList: true, subtree: true });
+})();
+const healthBarObserver = new MutationObserver((mutationsList) => {
+    for (const mutation of mutationsList) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+            // Get the current width from the style
+            const currentWidth = observedHealthBarPart.style.width;
+
+            console.log('Width changed to:', currentWidth);
+            heathTextDisplayElement.textContent = currentWidth;
+        }
+    }
+});
+let observedHealthBarPart = null;
+let heathTextDisplayElement = document.createElement("div");
+
+const isHealthBar = (elem) => elem.classList.contains("health-ui-container");
+const gameWrapperObserver = new MutationObserver((mutationsList) => {
+    for (const mutation of mutationsList) {
+        if (mutation.type === "childList") {
+            if (mutation.addedNodes[0] && isHealthBar(mutation.addedNodes[0])) {
+                addHealthBar(mutation.addedNodes[0]);
+            }
+            if (mutation.removedNodes[0] && isHealthBar(mutation.removedNodes[0])) {
+                removeHealthBar(mutation.removedNodes[0])
+            }
+            //console.log('Added', mutation.addedNodes, "Removed", mutation.removedNodes);
+        }
+    }
+});
+gameWrapperObserver.observe(document.getElementById("gameWrapper"), {
+    childList: true
+});
+
+function addHealthBar(element) {
+    console.log("Added health bar", element);
+    element.append(heathTextDisplayElement);
+
+    observedHealthBarPart = document.getElementsByClassName("health-ui-bar clip")[0];
+    healthBarObserver.observe(observedHealthBarPart, {
+        attributes: true,
+        attributeFilter: ['style']
+    });
+}
+function removeHealthBar(element) {
+    console.log("Removed health bar", element);
+    heathTextDisplayElement.remove();
+    healthBarObserver.disconnect();
+
+}
+
+
+
+(function() {
+    'use strict';
+
+    const replacementTable = {
+        "static/img/hudIcons/flagRed.svg": "https://cdn.pixabay.com/photo/2014/04/02/10/35/red-303921_960_720.png",
+        "static/img/hudIcons/flagBlue.svg": "https://png.pngtree.com/png-vector/20220921/ourmid/pngtree-a-blue-flagvector-or-color-illustration-drawing-windy-vector-vector-png-image_28304152.png",
+        "static/img/hudIcons/playerIcon.svg": "https://cdn-icons-png.flaticon.com/512/309/309543.png",
+    }
+    const originalSrcDescriptor = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, "src");
+    Object.defineProperty(HTMLImageElement.prototype, "src", {
+        set(value) {
+            //console.log(value); // uncomment to determine what the values should be
+            if (replacementTable[value]) this.crossOrigin = "anonymous";
+            originalSrcDescriptor.set.call(this, replacementTable[value] ?? value);
+        },
+        get() {
+            return originalSrcDescriptor.get.call(this);
+        }
+    });
+})();
+
+
