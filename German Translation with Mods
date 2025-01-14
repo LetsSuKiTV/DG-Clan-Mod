@@ -1,0 +1,277 @@
+// ==UserScript==
+// @name         Fan Translation (German)
+// @namespace    http://tampermonkey.net/
+// @version      3.0
+// @description  Translating menu buttons to German; Support: https://discord.com/invite/PjjYTgKx8M
+// @author       @LetsSuKiTV
+// @run-at       document-start
+// @match        https://narrow.one/
+// @icon         https://yt3.googleusercontent.com/IwwN0hVbiC5d4HqpFsNYQ7qUWi50L3N2F2c1jjx5494IND6DR-I2XuZ98iEcXmkK8motBXDl=s160-c-k-c0x00ffffff-no-rj
+// @downloadURL  https://raw.githubusercontent.com/TheGirlThatLived/NarrowOne_Customizations/refs/heads/main/Scripts/CSS-Theme(ViolentGlass)%5BAuto-updates%5D.js
+// @updateURL    https://raw.githubusercontent.com/TheGirlThatLived/NarrowOne_Customizations/refs/heads/main/Scripts/CSS-Theme(ViolentGlass)%5BAuto-updates%5D.js
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    // Function to replace the text
+    function translateButtonText() {
+        const translatedCoinCount = document.querySelector('.coin-count-text.blueNight');
+        if (translatedCoinCount) {
+            translatedCoinCount.setAttribute('data-text-content', 'Münzen');
+            translatedCoinCount.textContent = 'Münzen';
+        }
+        const translatedButtons = document.querySelectorAll('.main-menu-button-text, button.dialog-button, div.mainInfoText, h3.dialogTitle, span.coin-count-text.blueNight, h2.dialogTitle, .dialogText');
+        translatedButtons.forEach(untranslatedButton => {
+            switch(untranslatedButton.textContent.trim()) {
+                case 'Click to join':
+                    untranslatedButton.textContent = 'Klicke zum Beitreten';
+                    break;
+                    // Main Menu buttons
+                case 'Settings':
+                    untranslatedButton.textContent = 'Einstellungen';
+                    break;
+                case 'Shop':
+                    untranslatedButton.textContent = 'Laden';
+                    break;
+                case 'Squad':
+                    untranslatedButton.textContent = 'Gruppe';
+                    break;
+                case 'Maps':
+                    untranslatedButton.textContent = 'Karten';
+                    break;
+                case 'Full Screen':
+                    untranslatedButton.textContent = 'Vollbild';
+                    break;
+                case 'Enable Auto Full Screen?':
+                    untranslatedButton.textContent = 'Willst du den Vollbildmodus anschalten?';
+                    break;
+                case 'Do you automatically want to enter full screen when joining a game? (This can be disabled later in settings)':
+                    untranslatedButton.textContent = 'Willst du automatisch den Vollbildmodus einschalte lassen, wenn du einem Spiel beitrittst?';
+                    break;
+                case 'Heck Yeah!':
+                    untranslatedButton.textContent = 'Ja!';
+                    break;
+                case 'No Thanks':
+                    untranslatedButton.textContent = 'Nein';
+                    break;
+                case 'Install':
+                    untranslatedButton.textContent = 'Installieren';
+                    break;
+                case 'Exit Round':
+                    untranslatedButton.textContent = 'Spiel verlassen';
+                    break;
+                case 'Join our Discord':
+                    untranslatedButton.textContent = 'Discord beitreten';
+                    break;
+                case 'Save':
+                    untranslatedButton.textContent = 'Speichern';
+                    break;
+                    // Match dialogs
+                case 'Are you sure?':
+                    untranslatedButton.textContent = 'Bist du dir sicher';
+                    break;
+                case 'You will not earn any coins from this match.':
+                    untranslatedButton.textContent = 'Du wirst keine Münzen für dieses Spiel erhalten.';
+                    break;
+                case 'You are the squad leader so all members will exit this match too. No one will earn any coins from this match.':
+                    untranslatedButton.textContent = 'Du bisch de Gruppe äfuehrer, wenn du das Spiel verlahsch werded alli usetah und niemert wirt Geld vo dem Spiel becho.';
+                    break;
+                case 'Exit':
+                    untranslatedButton.textContent = 'Verlassen';
+                    break;
+                case 'stay in game':
+                    untranslatedButton.textContent = 'Im spiel bleiben';
+                    break;
+                case 'Connection closed':
+                    untranslatedButton.textContent = 'Verbindung verloren';
+                    break;
+                case 'You have been kicked for being afk for too long.':
+                    untranslatedButton.textContent = 'Du wurdest rausgeworfen, weil du dich zu lange nicht bewegt hast.';
+                    break;
+                case 'ok':
+                    untranslatedButton.textContent = 'OK';
+                    break;
+                    // Squads
+                case 'Invite someone':
+                    untranslatedButton.textContent = 'Lade jemanden ein';
+                    break;
+                case 'Private squad':
+                    untranslatedButton.textContent = 'Private Gruppe';
+                    break;
+                case 'Join existing squad':
+                    untranslatedButton.textContent = 'Existierender Gruppe beitreten';
+                    break;
+                case 'Ready':
+                    untranslatedButton.textContent = 'Bereit';
+                    break;
+                case 'Start':
+                    untranslatedButton.textContent = 'Los';
+                    break;
+                    // Shop
+                case 'Scout':
+                    untranslatedButton.textContent = 'Jäger';
+                    break;
+                case 'Assault':
+                    untranslatedButton.textContent = 'Normaler Skin';
+                    break;
+                case 'Sharpshooter':
+                    untranslatedButton.textContent = 'Scharfschütze';
+                    break;
+                case 'Runner':
+                    untranslatedButton.textContent = 'Renner';
+                    break;
+                case 'Support':
+                    untranslatedButton.textContent = 'Helfer';
+                    break;
+                case 'Defender':
+                    untranslatedButton.textContent = 'Verteidiger';
+                    break;
+                case 'Edit':
+                    untranslatedButton.textContent = 'Bearbeiten';
+                    break;
+                case 'Presets':
+                    untranslatedButton.textContent = 'Voreinstellungen';
+                    break;
+                case 'Looks':
+                    untranslatedButton.textContent = 'Aussehn';
+                    break;
+                case 'Gear':
+                    untranslatedButton.textContent = 'Rüstung';
+                    break;
+                case 'Bow':
+                    untranslatedButton.textContent = 'Bogen';
+                    break;
+                case 'Melee':
+                    untranslatedButton.textContent = 'Nahkampfwaffe';
+                    break;
+                case 'Rewarded':
+                    untranslatedButton.textContent = 'Kostenloses';
+                    break;
+                case 'Handle':
+                    untranslatedButton.textContent = 'Handstück';
+                    break;
+                case 'Tip':
+                    untranslatedButton.textContent = 'Spitze';
+                    break;
+                case 'Arrow':
+                    untranslatedButton.textContent = 'Pfeil';
+                    break;
+                case 'Head':
+                    untranslatedButton.textContent = 'Helm';
+                    break;
+                case 'Torso':
+                    untranslatedButton.textContent = 'Brustplatte';
+                    break;
+                case 'Arms':
+                    untranslatedButton.textContent = 'Arm';
+                    break;
+                case 'Legs':
+                    untranslatedButton.textContent = 'Bein';
+                    break;
+                case 'Quiver':
+                    untranslatedButton.textContent = 'Köcher';
+                    break;
+                case 'Skin color':
+                    untranslatedButton.textContent = 'Hautfarbe';
+                    break;
+                case 'Hair':
+                    untranslatedButton.textContent = 'Haare';
+                    break;
+                case 'Eyebrows':
+                    untranslatedButton.textContent = 'Augenbrauen';
+                    break;
+                case 'Eyes':
+                    untranslatedButton.textContent = 'Augen';
+                    break;
+                case 'Beard':
+                    untranslatedButton.textContent = 'Bart';
+                    break;
+                case 'Tattoos':
+                    untranslatedButton.textContent = 'Tatoos';
+                    break;
+                case 'Miscellaneous':
+                    untranslatedButton.textContent = 'Andere Sachen';
+                    break;
+
+            }
+        });
+    }
+    // Initial replacement on page load
+    translateButtonText();
+    // Observe for dynamic content changes
+    const observer = new MutationObserver(translateButtonText);
+    observer.observe(document.body, { childList: true, subtree: true });
+})();
+const healthBarObserver = new MutationObserver((mutationsList) => {
+    for (const mutation of mutationsList) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+            // Get the current width from the style
+            const currentWidth = observedHealthBarPart.style.width;
+
+            console.log('Width changed to:', currentWidth);
+            heathTextDisplayElement.textContent = currentWidth;
+        }
+    }
+});
+let observedHealthBarPart = null;
+let heathTextDisplayElement = document.createElement("div");
+
+const isHealthBar = (elem) => elem.classList.contains("health-ui-container");
+const gameWrapperObserver = new MutationObserver((mutationsList) => {
+    for (const mutation of mutationsList) {
+        if (mutation.type === "childList") {
+            if (mutation.addedNodes[0] && isHealthBar(mutation.addedNodes[0])) {
+                addHealthBar(mutation.addedNodes[0]);
+            }
+            if (mutation.removedNodes[0] && isHealthBar(mutation.removedNodes[0])) {
+                removeHealthBar(mutation.removedNodes[0])
+            }
+            //console.log('Added', mutation.addedNodes, "Removed", mutation.removedNodes);
+        }
+    }
+});
+gameWrapperObserver.observe(document.getElementById("gameWrapper"), {
+    childList: true
+});
+
+function addHealthBar(element) {
+    console.log("Added health bar", element);
+    element.append(heathTextDisplayElement);
+
+    observedHealthBarPart = document.getElementsByClassName("health-ui-bar clip")[0];
+    healthBarObserver.observe(observedHealthBarPart, {
+        attributes: true,
+        attributeFilter: ['style']
+    });
+}
+function removeHealthBar(element) {
+    console.log("Removed health bar", element);
+    heathTextDisplayElement.remove();
+    healthBarObserver.disconnect();
+
+}
+
+
+
+(function() {
+    'use strict';
+
+    const replacementTable = {
+        "static/img/hudIcons/flagRed.svg": "https://cdn.pixabay.com/photo/2014/04/02/10/35/red-303921_960_720.png",
+        "static/img/hudIcons/flagBlue.svg": "https://png.pngtree.com/png-vector/20220921/ourmid/pngtree-a-blue-flagvector-or-color-illustration-drawing-windy-vector-vector-png-image_28304152.png",
+        "static/img/hudIcons/playerIcon.svg": "https://cdn-icons-png.flaticon.com/512/309/309543.png",
+    }
+    const originalSrcDescriptor = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, "src");
+    Object.defineProperty(HTMLImageElement.prototype, "src", {
+        set(value) {
+            //console.log(value); // uncomment to determine what the values should be
+            if (replacementTable[value]) this.crossOrigin = "anonymous";
+            originalSrcDescriptor.set.call(this, replacementTable[value] ?? value);
+        },
+        get() {
+            return originalSrcDescriptor.get.call(this);
+        }
+    });
+})();
+
